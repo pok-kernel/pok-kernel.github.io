@@ -34,10 +34,10 @@
       </a>
 
       <div class="trigger">
-        <a class="page-link" href="/about/">about</a>
         <a class="page-link" href="/documentation/">documentation</a>
         <a class="page-link" href="/usage/">download & quick start</a>
         <a class="page-link" href="/faq/">faq</a>
+        <a class="page-link" href="/about/">about</a>
         <a class="page-link" href="https://github.com/pok-kernel/pok">github</a>
       </div>
     </nav>
@@ -52,14 +52,33 @@
         <div class="home">
 <p>
 POK is a real-time embedded operating system for safety-critical systems.
-It isolates applications and drivers in time and space.
-It is compliant with POSIX and ARINC653.
+It relies on a micro-kernel architecture that isolates applications and 
+drivers in time and space.
+It is compatible with <a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a> and
+<a href="https://en.wikipedia.org/wiki/ARINC_653">ARINC653</a>.
 </p>
 
 <p>
 The kernel was designed to be very small and targets full
 verification/certification: more than 90% of the kernel code if covered.
+It currently runs on x86, PowerPC and Leon architectures.
 </p>
+
+<p>
+<strong>Important security information (september 2018)</strong>
+On September 12 2018, we have been made aware of a vulnerability in
+POK by Stephane Duverger from Airbus Group CERT. Theres is the
+description of the vulnerability:
+<em>"
+The POK micro-kernel is vulnerable to partition space segregation overflow vulnerability due to failure to properly validate user provided pointers during system calls.
+As a consequence, a malicious user partition code is able to read and/or write out of the memory space dedicated to its partition."
+</em>
+We are currently working actively to provide a patch that will
+be committed within the next few days. We wanted to
+make the POK community aware of this issue. We would
+like to thank Stephane for helping the POK community.
+</p>
+
 
 
 </div>

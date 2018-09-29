@@ -34,10 +34,10 @@
       </a>
 
       <div class="trigger">
-        <a class="page-link" href="/about/">about</a>
         <a class="page-link" href="/documentation/">documentation</a>
         <a class="page-link" href="/usage/">download & quick start</a>
         <a class="page-link" href="/faq/">faq</a>
+        <a class="page-link" href="/about/">about</a>
         <a class="page-link" href="https://github.com/pok-kernel/pok">github</a>
       </div>
     </nav>
@@ -59,24 +59,14 @@
   <div class="post-content">
     <h1 id="what-is-pok">What is POK?</h1>
 
-<p>POK is a real-time embedded operating system for safety-critical systems (avionics, aerospace and so on).
-It provides several functionalities and complies with many industrial standards, such as ARINC653 or POSIX.
-POK was designed to be used in safety-critical systems as well as in public systems.</p>
+<p>POK is a real-time embedded operating system for safety-critical systems
+such as the one used in aerospace, avionics or nuclear applications.</p>
 
-<p>The kernel was designed to be very small and targets full
-verification/certification.
-Actually, more than 90% of the kernel code is covered without any effort.
-Moreover, its design, closed to microkernel architectures, isolates device drivers to avoid crashes and increase system safety. In addition, it isolates each communication channels to improve safety and security.</p>
+<p>POK relies on a micro-kernel that isolates device drivers and partitions
+in time and space so that no application can overrun its resources budget.</p>
 
-<p>Available toolset is available to build applications with the POK operating system: we provide a code generator that automatically configures and deploy applications from architecture models (AADL).</p>
-
-<p>POK is available as a free software under the BSD licence. It is developed by an academic and industrial community.</p>
-
-<h1 id="existing-gplv3-fork">Existing GPLv3 fork</h1>
-<p>It has been forked and re-licensed under the GPLv3 by ISPRAS under the name <a href="http://www.ispras.ru/en/proceedings/isp_29_2017_3/isp_29_2017_3_171/">JetOS</a>. You can
-find the source code of the fork <a href="https://github.com/yoogx/forge.ispras.ru-git-chpok">here</a>.
-This fork is <a href="http://www.startlr.com/in-russia-it-is-planned-to-create-an-operating-system-for-aircraft/">actually used</a> for commercial airplanes in Russia:
-<em>“There is already a working prototype of the RTOS, operating on the platforms of domestic developers. A certification package that meets the requirements of the Russian aviation authorities is planned to be received in accordance with the concluded contracts at the end of 2019”</em></p>
+<p>POK has been used in several research project and one fork is now
+used in commercial aircrafts.</p>
 
 <h1 id="open-source-support">Open Source Support</h1>
 <p>Open Source support is done through github. You can open a new issue (or browse existing

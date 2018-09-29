@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>POK - faq</title>
+  <title>POK - Frequently Asked Questions</title>
   <meta name="description" content="Website of the POK partitioned operating system
 ">
 
@@ -34,10 +34,10 @@
       </a>
 
       <div class="trigger">
-        <a class="page-link" href="/about/">about</a>
         <a class="page-link" href="/documentation/">documentation</a>
         <a class="page-link" href="/usage/">download & quick start</a>
         <a class="page-link" href="/faq/">faq</a>
+        <a class="page-link" href="/about/">about</a>
         <a class="page-link" href="https://github.com/pok-kernel/pok">github</a>
       </div>
     </nav>
@@ -52,49 +52,63 @@
         <article class="post">
 
   <!--<header class="post-header">
-    <h1 class="post-title">faq</h1>
+    <h1 class="post-title">Frequently Asked Questions</h1>
   </header>
   -->
 
   <div class="post-content">
-    <h1 id="what-is-pok-">What is POK ?</h1>
-<p>POK is a partitioned operating system.
-It provides separation functionnalities to isolate different software components.
-With this separation, different software components can be collocated on the same machine ensuring safety and security enforcement:</p>
+    <h3 id="what-is-pok">What is POK?</h3>
+<p>POK is a partitioned operating system, which means it isolates drivers and
+applications in time and space. No driver/application can use more than its
+allocated resources.</p>
 
-<ol>
-  <li>A failure of one component does not affect the others (safety)</li>
-  <li>A partition cannot access to the data/code of another partition (security)</li>
-</ol>
+<p>The concept of partitioned architectures is introduced in <a href="https://en.wikipedia.org/wiki/ARINC_653">ARINC653</a> 
+and
+<a href="https://en.wikipedia.org/wiki/Multiple_Independent_Levels_of_Security">MILS</a> standards. 
+POK is fully compatible with these standards.</p>
 
-<p>The concept of partitioned architectures is introduced in ARINC653 and MILS standards. POK tries to provide a generic partitioned concept that can fit with these standards.</p>
+<h3 id="why-pok-isolates-applications">Why POK isolates applications?</h3>
 
-<h1 id="what-is-aadl-">What is AADL ?</h1>
+<p>Drivers and applications isolation is done for safety and security reasons.
+By isolating in space, we make sure that each partition cannot access
+other address space.</p>
+
+<p>Time isolation means that each partition has enough time to be
+executed. We guarantee that a function has the timeslice it requires to be 
+executed and no other application can preempt it.</p>
+
+<p>By using a minimal micro-kernel and separating each component in each own
+partition, we also facilitate the system analysis and certification.</p>
+
+<h3 id="what-is-aadl">What is AADL?</h3>
 
 <p><a href="http://www.aadl.info">AADL</a> is a modeling language that describes system architectures. 
-With AADL, you can represent your runtime architecture (processor, partition, communications, etc.)
-and their constraints (security level of a partition, scheduling policy of a processor, etc.).
-Such a representation can be processed to validate system architecture.</p>
+We use this language has a frontend to model and validate the architecture and generate the
+configuration and runtime code.</p>
 
-<p>In POK, we use the AADL to generate the code of the kernel. 
-You model your system with its partitioning constraints using AADL. 
-Then, a code generator automatically generate the code that configures kernel and partitions. Using this development method, you avoid manual code production, which is, most of the time, error-prone.</p>
+<h3 id="what-is-ocarina">What is Ocarina?</h3>
 
-<h1 id="where-can-i-find-the-ocarina-aadl-toolsuite-">Where can I find the Ocarina AADL toolsuite ?</h1>
+<p>Ocarina is an AADL toolsuite that is used to process AADL models and generate
+configuration code for POK.
+You can get the source code of Ocarina on the <a href="https://github.com/OpenAADL/ocarina">Ocarina github page</a>.</p>
 
-<p>Go on the <a href="https://github.com/OpenAADL/ocarina">Ocarina github page</a>.</p>
+<p>No worries, you can use POK without Ocarina.</p>
 
-<h1 id="can-i-use-pok-without-aadl-">Can I use POK without AADL ?</h1>
-<p>Yes, but in that case, you’ll lose code generation benetifs and you’ll have to write the configuration code of the kernel by yourself. The documentation of POK provides necessary items to configure POK by yourself.</p>
+<h3 id="can-i-use-pok-without-aadl-">Can I use POK without AADL ?</h3>
+<p>Yes, but you lose code generation benetifs and need to write the configuration
+and runtime code yourself.</p>
 
-<h1 id="what-standards-pok-supports-">What standards POK supports ?</h1>
-<p>At this time, POK supports ARINC653 and MILS standards. For ARINC653, the C layer is available. For MILS, we check MILS compliance at the model-level, with an AADL model validator.</p>
-
-<h1 id="how-much-does-it-cost-">How much does it cost ?</h1>
+<h3 id="how-much-does-it-cost-">How much does it cost ?</h3>
 <p>POK is a free-software (free as in “free speech”, not as in “free beer”): the code is released under the <a href="https://en.wikipedia.org/wiki/BSD_licenses">BSD license</a>.
 You can modify, adapt code and join our developer team.</p>
 
-<h1 id="who-provides-support-for-pok">Who provides support for POK?</h1>
+<h3 id="what-is-jetos">What is JetOS?</h3>
+<p>POK has been forked and re-licensed under the GPLv3 by ISPRAS under the name <a href="http://www.ispras.ru/en/proceedings/isp_29_2017_3/isp_29_2017_3_171/">JetOS</a>. You can
+find the source code of the fork <a href="https://github.com/yoogx/forge.ispras.ru-git-chpok">here</a>.
+This fork is <a href="http://www.startlr.com/in-russia-it-is-planned-to-create-an-operating-system-for-aircraft/">actually used</a> for commercial airplanes in Russia:
+<em>“There is already a working prototype of the RTOS, operating on the platforms of domestic developers. A certification package that meets the requirements of the Russian aviation authorities is planned to be received in accordance with the concluded contracts at the end of 2019”</em></p>
+
+<h3 id="who-provides-support-for-pok">Who provides support for POK?</h3>
 
 <p>There might be available support through different companies.
 <a href="http://www.reblochon.io">Reblochon</a> provides commercial support for POK.</p>

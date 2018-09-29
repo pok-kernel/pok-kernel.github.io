@@ -34,10 +34,10 @@
       </a>
 
       <div class="trigger">
-        <a class="page-link" href="/about/">about</a>
         <a class="page-link" href="/documentation/">documentation</a>
         <a class="page-link" href="/usage/">download & quick start</a>
         <a class="page-link" href="/faq/">faq</a>
+        <a class="page-link" href="/about/">about</a>
         <a class="page-link" href="https://github.com/pok-kernel/pok">github</a>
       </div>
     </nav>
@@ -64,8 +64,8 @@ account</a>.</p>
 
 <h2 id="download-the-source-code">Download the source code</h2>
 <p>Just issue the following command</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/pok-kernel/pok.git
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/pok-kernel/pok.git
+</code></pre></div></div>
 
 <h1 id="dependencies">Dependencies</h1>
 <p>Make sure you have the following packages:</p>
@@ -76,32 +76,32 @@ account</a>.</p>
 
 <p>If you are on ubuntu, you can install these packages using the following
 command:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>apt-get install mtools qemu
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install mtools qemu
+</code></pre></div></div>
 
 <p>You can check what packages are missing by issuing the following command</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>make configure
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make configure
+</code></pre></div></div>
 
 <h1 id="test-your-first-example">Test your first example</h1>
 
 <ol>
   <li>Set the POK_PATH variable
-    <div class="highlighter-rouge"><pre class="highlight"><code>export POK_PATH=/where/you/have/the/pok/sources
-</code></pre>    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export POK_PATH=/where/you/have/the/pok/sources
+</code></pre></div>    </div>
   </li>
   <li>Configure your runtime by typing the following command.
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd $POK_PATH
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd $POK_PATH
 make configure
-</code></pre>    </div>
+</code></pre></div>    </div>
     <p>The x86 architecture should be configured. If not, install
 the missing packages.</p>
   </li>
   <li>Go to the example and compile
-    <div class="highlighter-rouge"><pre class="highlight"><code>cd examples/semaphores
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd examples/semaphores
 make all
 make run
-</code></pre>    </div>
+</code></pre></div>    </div>
   </li>
 </ol>
 
